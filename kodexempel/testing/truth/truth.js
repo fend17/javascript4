@@ -111,9 +111,21 @@ function gotThatReference() {
   };
   const objC = objA;
 
+  const objD = {
+    a: '1',
+    b: '2'
+  };
+
+  const objE = {
+    b: '2',
+    a: '1'
+  };
+
   console.log(objA == objB);
   console.log(objA == objC);
   console.log(objA === objC);
+  console.log(JSON.stringify(objA) === JSON.stringify(objB));
+  console.log(JSON.stringify(objD) === JSON.stringify(objE));
 }
 
 // gotThatReference();
@@ -123,11 +135,14 @@ function gotThatReference() {
 function gotThatReference2() {
   const arrA = ['foo', 'bar'];
   const arrB = ['foo', 'bar'];
+  const arrB2 = ["foo", "bar"];
   const arrC = arrA;
 
   console.log(arrA == arrB);
   console.log(arrA == arrC);
   console.log(arrA === arrC);
+  console.log(JSON.stringify(arrA) === JSON.stringify(arrB));
+  console.log(JSON.stringify(arrA) === JSON.stringify(arrB2));
 }
 
 // gotThatReference2();
@@ -144,6 +159,7 @@ function gotThatReference3() {
   console.log(funcA == funcB);
   console.log(funcA == funcC);
   console.log(funcA === funcC);
+  console.log(JSON.stringify(funcA) === JSON.stringify(funcC));
 }
 
 // gotThatReference3();
