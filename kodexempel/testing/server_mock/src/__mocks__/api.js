@@ -1,9 +1,8 @@
-const books = [
-  { volumeInfo: { title: 'JavaScript: The Good Parts' } }
-];
+import fetch from 'node-fetch';
 
-export function findBook(query) {
-  return new Promise((resolve, reject) => {
-    resolve({ volumeInfo: { title: 'JavaScript: The Good Parts' } });
-  });
+export function findBook() {
+  const url = `http://localhost:3000/volumes`;
+  return fetch(url)
+    .then(response => response.json())
+    .then(json => json.items[0]);
 }
