@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "id" : 1,
+      "username" : "braffy"
+    },
+    {
+      "id" : 2,
+      "username" : "chocolaty"
+    },
+    {
+      "id" : 3,
+      "username" : "destroyer"
+    }
+  ],
+  "comments" : [
+    {
+      "id" : 1,
+      "body" : "Wow :D",
+      "userId" : 3
+    },
+    {
+      "id" : 2,
+      "body" : "Fantastic!",
+      "userId" : 3
+    },
+    {
+      "id" : 3,
+      "body" : "Not my cup of tea",
+      "userId" : 2
+    },
+    {
+      "id" : 4,
+      "body" : "Total madman",
+      "userId" : 1
+    }
+  ]
+}

@@ -4,6 +4,6 @@ const books = [
 
 export function findBook(query) {
   return new Promise((resolve, reject) => {
-    resolve(books[0]);
+    resolve({ volumeInfo: { title: 'JavaScript: The Good Parts' } });
   });
 }
