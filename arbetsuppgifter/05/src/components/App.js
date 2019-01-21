@@ -38,9 +38,9 @@ export default class App extends Component {
   renderList = rates => rates
     .filter(this.filterList)
     .map(rate => (
-      <p className="py-2 px-4 mb-4 border rounded shadow" key={rate.key}>
+      <li className="py-2 px-4 mb-4 border rounded shadow" key={rate.key}>
         {rate.value} {rate.key}
-      </p>
+      </li>
    ));
 
   render() {
@@ -57,11 +57,10 @@ export default class App extends Component {
           onChange={this.onChange} 
           name="search" 
           className="shadow appearance-none border rounded w-full py-2 px-3 mb-4 text-grey-darker" 
-          date-test="input"
         />
-        <div data-test="list">
+        <ul className="list-reset">
           {this.renderList(this.state.rates)}
-        </div>
+        </ul>
       </div>
     );
   }

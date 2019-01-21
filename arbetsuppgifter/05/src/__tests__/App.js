@@ -8,7 +8,16 @@ test('should be base EUR', () => {
   expect(wrapper.find('h1').text()).toContain('EUR');
 });
 
-it('should match snapshot', () => {
+test('should match snapshot', () => {
   const wrapper = render(<App />);
   expect(wrapper).toMatchSnapshot();
 });
+
+test('should populate list with rates', async () => {
+  const { rates } = await loadRates();
+  const wrapper = shallow(<App />);
+  wrapper.setState({ rates: mapObjectToArray(rates) });
+  const list = wrapper.find('ul');
+  expect(list.children()).toHaveLength(31);
+});
+

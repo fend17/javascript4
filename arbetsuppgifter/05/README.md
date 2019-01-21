@@ -7,14 +7,15 @@ Projektet är förberett med ett antal paket för att testa React-komponenter: [
 ## Installation
 Ställ dig i rotfoldern och kör `yarn` eller `npm install`
 
+## Kolla på projektet
+Starta projektet med `yarn start:serve` eller `npm run start:serve`
+Kolla på projektet på `localhost:3000` för att se hur applikationen beter sig. 
+
 ## Kör tester
 Jest kör alla tester som finns i `__test__`-mappar, eller filer döpta enligt mönstret `*.test.js`
 
 Kör igenom testerna en gång:
-`yarn test` eller `npm run test`
-
-Kör testerna i "watch"-läge (kör när antingen källfilen eller testfilen sparas):
-`yarn test:watch` eller `npm run test:watch`
+`yarn test:serve` eller `npm run test:serve`
 
 # Övningsuppgifter
 
