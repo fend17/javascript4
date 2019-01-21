@@ -6,7 +6,6 @@ import Button from './Button';
 export default class App extends Component {
   state = {
     rates: this.props.rates,
-    base: this.props.base,
     error: '',
     search: ''
   };
@@ -22,7 +21,7 @@ export default class App extends Component {
      * function for getting data and formatting data is
      * located in `api/index.js`
      */
-    loadRates(this.state.base)
+    loadRates(this.props.base)
       .then(({ rates, date, base }) => {
         this.setState({ rates: mapObjectToArray(rates) , date, base })
       })
@@ -50,7 +49,7 @@ export default class App extends Component {
         <div className="fixed pin-t pin-r m-4 font-mono uppercase text-sm flex flex-col items-center">
           <Button onClick={this.updateRates} />
         </div>
-        <h1 className="text-pink-dark mb-4">{this.state.base} Rates</h1>
+        <h1 className="text-pink-dark mb-4">{this.props.base} Rates</h1>
         <p className="error">{this.state.error}</p>
         <input 
           type="text" 

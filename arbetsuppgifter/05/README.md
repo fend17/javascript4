@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# jest-react-testing
 
-## Available Scripts
+>Exempel-app byggd med [`create-react-app`](https://github.com/facebookincubator/create-react-app) för integrations- och snapshot-testning. Appen hämtar växlingskurs från en lokal [json-server](https://github.com/typicode/json-server) och visar datan i en lista. Den har också en uppdateringsknapp som kan testas separat. **CSS-ramverket är [Tailwind](https://tailwindcss.com/)**
 
-In the project directory, you can run:
+Projektet är förberett med ett antal paket för att testa React-komponenter: [**`enzyme`**](http://airbnb.io/enzyme/docs/api/), `enzyme-adapter-react-16`, `react-test-renderer` samt `enzyme-to-json` för snapshot.testning. 
 
-### `npm start`
+## Installation
+Ställ dig i rotfoldern och kör `yarn` eller `npm install`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Kör tester
+Jest kör alla tester som finns i `__test__`-mappar, eller filer döpta enligt mönstret `*.test.js`
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Kör igenom testerna en gång:
+`yarn test` eller `npm run test`
 
-### `npm test`
+Kör testerna i "watch"-läge (kör när antingen källfilen eller testfilen sparas):
+`yarn test:watch` eller `npm run test:watch`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Övningsuppgifter
 
-### `npm run build`
+## Uppgift 1
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Testa följande scenarion:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+* Listan blir **inte** fylld
+* Ett felmeddelande visas när fetch får ett error
+* Testa funktionerna in `api/index.js`
+  * `loadRates()` ska returnera json när anropad med korrekt url
+  * `loadRates()` ska kasta eller returna error när anropad utan url
+  * `mapObjectToArray()` ska konvertera object till array
+  * `mapObjectToArray()` ska faila när den anropas med något som inte är ett object
+  * Kommer du på andra scenarion, skriv gärna tester för dem också
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Uppgift 2
 
-### `npm run eject`
+Just nu returneras växelkursen med basen **EUR**. Du kan också välja att istället anropa med basen **SEK**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Du kan ändra detta genom att skicka props till `<App />`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```jsx
+//index.js
+ReactDOM.render(<App base="SEK" />, document.getElementById('root'));
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Ändra på props så att applikationen fetchar med SEK som base. Skriv tester som kontrollerar att rätt data hämtas och skrivs ut korrekt i DOMen. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Övning 3
 
-## Learn More
+Det finns ett inmatningsfält som filtrerar ut vilka valutor som visas i listan. Skriv tester som dubbelkollar att inmatningsfältet fungerar. Testa följande:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* Statets search-fält blir uppdaterat på onChange på inmatningsfältet
+* Kolla att listans nya längd stämmer
+* Kolla att en korrekt filtrering görs
