@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<div
+  class="flex flex-col justify-center items-center w-1/2 mx-auto font-mono text-grey-darker mt-6"
+>
+  <div
+    class="fixed pin-t pin-r m-4 font-mono uppercase text-sm flex flex-col items-center"
+  >
+    <button
+      class="bg-pink hover:bg-pink-light 
+  text-white 
+  font-bold py-2 px-4 
+  border-b-4 
+  border-pink-dark 
+  hover:border-pink rounded mt-4
+"
+      data-test="button"
+    >
+      Update Rates
+    </button>
+  </div>
+  <h1
+    class="text-pink-dark mb-4"
+  >
+    EUR Rates
+  </h1>
+  <p
+    class="error"
+  />
+  <input
+    class="shadow appearance-none border rounded w-full py-2 px-3 mb-4 text-grey-darker"
+    date-test="input"
+    name="search"
+    type="text"
+    value=""
+  />
+  <div
+    data-test="list"
+  />
+</div>
+`;

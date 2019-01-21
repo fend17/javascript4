@@ -5,7 +5,7 @@ import Button from './Button';
 
 export default class App extends Component {
   state = {
-    rates: this.props.rates,
+    rates: [],
     error: '',
     search: ''
   };
@@ -68,10 +68,6 @@ export default class App extends Component {
 }
 
 App.propTypes = {
-  rates: PropTypes.arrayOf(PropTypes.shape({
-    key: PropTypes.string,
-    value: PropTypes.number
-  })),
   base: PropTypes.string
 };
 
@@ -80,7 +76,5 @@ App.propTypes = {
  * uses these props, default is EUR and todays rate
  */
 App.defaultProps = {
-  rates: [],
-  base: 'EUR',
-  date: 'latest'
+  base: 'EUR'
 };
