@@ -1,0 +1,23 @@
+{
+  "name": "reactcomponents",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^23.6.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-test-renderer": "^16.7.0"
+  }
+}
