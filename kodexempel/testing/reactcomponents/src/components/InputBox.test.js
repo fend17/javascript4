@@ -11,3 +11,9 @@ test('Rendering an input box', () => {
   expect(inputBox.find('input')).toHaveLength(1);
   expect(inputBox.state('inputValue')).toMatch('Jonas');
 });
+
+test('Basic snapshot', () => {
+  const inputBox = shallow(<InputBox />);
+
+  expect(inputBox).toMatchSnapshot();
+});
