@@ -27,11 +27,11 @@ Skriv testerna i `__tests__`
 
 ## Uppgift 2: Testa API:et
   * `loadRates()` ska returnera json när anropad med korrekt url
-  * `loadRates()` ska kasta eller returna error när anropad med inkorrekt url
   * `mapObjectToArray()` ska konvertera object till array
   * `mapObjectToArray()` ska faila när den anropas med något som inte är ett object
 
 Uppgift 3: Testa Appen
+  * Ska innehålla en knapp
   * Ska lista korrekt antal items när `rates` har innehåll
   * `search` i statet skall uppdateras på att innehållet i inputfältet ändras
   * Listan skall filtreras när värdet på `search` ändras
