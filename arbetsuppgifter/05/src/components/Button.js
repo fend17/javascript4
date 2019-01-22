@@ -35,6 +35,7 @@ class Button extends Component {
     return (
       <button
         onClick={this.handleClick}
+        disabled={this.state.disabled}
         className={`${this.state.disabled ? disabledButtonStyle : buttonStyle}`}
         data-test="button"
       >

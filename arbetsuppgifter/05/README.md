@@ -19,36 +19,20 @@ Kör igenom testerna en gång:
 
 # Övningsuppgifter
 
-## Uppgift 1
+Skriv testerna i `__tests__`
 
-Testa följande scenarion:
+## Uppgift 1: Testa knappen
+  * Ska bli disabled efter att ha blivit klickad på
+  * Ska ha fått annan style efter att ha blivit klickad på
 
-* Listan blir **inte** fylld
-* Ett felmeddelande visas när fetch får ett error
-* Testa funktionerna in `api/index.js`
+## Uppgift 2: Testa API:et
   * `loadRates()` ska returnera json när anropad med korrekt url
-  * `loadRates()` ska kasta eller returna error när anropad utan url
+  * `loadRates()` ska kasta eller returna error när anropad med inkorrekt url
   * `mapObjectToArray()` ska konvertera object till array
   * `mapObjectToArray()` ska faila när den anropas med något som inte är ett object
-  * Kommer du på andra scenarion, skriv gärna tester för dem också
 
-## Uppgift 2
-
-Just nu returneras växelkursen med basen **EUR**. Du kan också välja att istället anropa med basen **SEK**
-
-Du kan ändra detta genom att skicka props till `<App />`
-
-```jsx
-//index.js
-ReactDOM.render(<App base="SEK" />, document.getElementById('root'));
-```
-
-Ändra på props så att applikationen fetchar med SEK som base. Skriv tester som kontrollerar att rätt data hämtas och skrivs ut korrekt i DOMen. 
-
-## Övning 3
-
-Det finns ett inmatningsfält som filtrerar ut vilka valutor som visas i listan. Skriv tester som dubbelkollar att inmatningsfältet fungerar. Testa följande:
-
-* Statets search-fält blir uppdaterat på onChange på inmatningsfältet
-* Kolla att listans nya längd stämmer
-* Kolla att en korrekt filtrering görs
+Uppgift 3: Testa Appen
+  * Ska lista korrekt antal items när `rates` har innehåll
+  * `search` i statet skall uppdateras på att innehållet i inputfältet ändras
+  * Listan skall filtreras när värdet på `search` ändras
+  

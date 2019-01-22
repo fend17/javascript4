@@ -10,27 +10,19 @@ export default class App extends Component {
     search: ''
   };
 
-  componentDidMount() {
-    this.updateRates();
-  }
-
   onChange = ({ target }) => this.setState({ [target.name] : target.value });
 
   updateRates = () => {
-    /* 
-     * function for getting data and formatting data is
-     * located in `api/index.js`
-     */
     loadRates(this.props.base)
-      .then(({ rates, date, base }) => {
-        this.setState({ rates: mapObjectToArray(rates) , date, base })
+      .then(({ rates, base }) => {
+        this.setState({ rates: mapObjectToArray(rates), base })
       })
       .catch(e => this.setState({ error: e.message }));
   };
 
   filterList = rate => {
     if(rate.value && this.state.search) {
-      return rate.key.includes(this.state.search)
+      return rate.key.toLocaleLowerCase().includes(this.state.search.toLocaleLowerCase())
     }
     return rate;
   }
