@@ -11,7 +11,21 @@
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
-    ]
+    ],
+    "collectCoverageFrom": [
+      "src/*/*.js",
+      "!src/index.js",
+      "!src/registerServiceWorker.js",
+      "!src/setupTests.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 0
+      }
+    }
   },
   "dependencies": {
     "react": "^16.7.0",
