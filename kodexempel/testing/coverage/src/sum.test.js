@@ -5,10 +5,8 @@ test('should add two numbers together', () => {
 });
 
 // Uncomment to test all branches
-/*
 test('should throw if not a number', () => {
   expect(() => {
     sum(null, "falafel");
   }).toThrowError("Only numbers please");
 });
-*/

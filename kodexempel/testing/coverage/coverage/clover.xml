@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1548341880195" clover="3.2.0">
-  <project timestamp="1548341880195" name="All files">
+<coverage generated="1548406065347" clover="3.2.0">
+  <project timestamp="1548406065348" name="All files">
     <metrics statements="14" coveredstatements="13" conditionals="7" coveredconditionals="5" methods="3" coveredmethods="3" elements="24" coveredelements="21" complexity="0" loc="14" ncloc="14" packages="1" files="1" classes="1">
       <file name="coverage.js" path="/Users/jonasstattin/Develop/javascript4/kodexempel/testing/coverage/src/coverage.js">
         <metrics statements="14" coveredstatements="13" conditionals="7" coveredconditionals="5" methods="3" coveredmethods="3"/>

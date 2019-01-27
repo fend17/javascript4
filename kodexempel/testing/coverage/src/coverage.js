@@ -1,9 +1,9 @@
 function localFunction1 (param) { // Function
-  let returnVal = false;
+  let returnVal = false; // Statement
   if (param === 'a') { // Statement and branch
     returnVal = true; // Statement
   }
-
+  
   return returnVal; // Statement
 }
 
@@ -20,12 +20,12 @@ export function functionWithBranches(param) { // Function
   let returnValue = false; // Statement
   switch(param) { // Statement
     case 'a': // Branch
-      returnValue = localFunction1(param);
+      returnValue = localFunction1(param); // Statement
       break;
     case 'b': // Branch
       returnValue = localFunction2(param); // Statement
     default: // Branch, even if empty
       break;
   }
-  return returnValue;
+  return returnValue; // Statement
 }
