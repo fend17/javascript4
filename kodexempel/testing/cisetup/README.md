@@ -38,19 +38,14 @@ Skapa en `.gitlab-ci.yml` fil i projektroten, med följande innehåll:
 ```
 image: node:10.15.0
 
-variables:
-  CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
-
 cache:
   paths:
     - node_modules/
-    - cache/Cypress
 
 stages:
   - test
 
 test:
-  image: cypress/base:10
   stage: test
   before_script: 
     - yarn install 
@@ -95,20 +90,15 @@ Vi lägger till ett nytt steg i `.gitlab-ci.yml`
 ```
 image: node:10.15.0
 
-variables:
-  CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
-
 cache:
   paths:
     - node_modules/
-    - cache/Cypress
 
 stages:
   - test
   - staging
 
 test:
-  image: cypress/base:10
   stage: test
   before_script: 
     - yarn install 
