@@ -6,16 +6,6 @@ Skapa ett nytt Firebase-projekt på dashboarden
 
 Installera Firebase CLI: `npm install -g firebase-tools`
 
-Initiera Firebase i projektet: `firebase init`
-  1. Välj `database` samt `hosting`
-  2. Välj ditt nyskapade projekt
-  3. Default database rules
-  4. Sätt "public" directory till "build", det är där Create React App placerar det bygga projektet
-  5. Svara "yes" på frågan om det här är en Single Page Application
-  6. Skriv INTE över `index.html`, behåll den som finns i projektet
-
-Hämta och spara undan din Firebase deploy key: `firebase login:ci`
-
 ---
 
 ## GitLab
@@ -38,6 +28,14 @@ Fixa några GitLab settings
 Klona projektet with valfri Git-klient
 
 Kopiera filerna från `arbetsuppgifter/06b` (eller valfritt projekt med tester)
+
+Initiera Firebase i projektet: `firebase init`
+  1. Välj `database` samt `hosting`
+  2. Välj ditt nyskapade projekt
+  3. Default database rules
+  4. Sätt "public" directory till "build", det är där Create React App placerar det bygga projektet
+  5. Svara "yes" på frågan om det här är en Single Page Application
+  6. Skriv INTE över `index.html`, behåll den som finns i projektet
 
 Skapa en `.gitlab-ci.yml` fil i projektroten, med följande innehåll:
 
@@ -70,6 +68,9 @@ Pusha nu hela projektet till GitLab-repot och kolla i CI/CD-panelen att testning
 
 ## Testa Merge Request
 
+Fixa några GitLab settings
+ -> General -> Merge request -> Only allow merge requests to be merged if the pipeline succeeds
+
 Skapa en ny feature-branch
 
 Gör en ändring som breakar ett test
@@ -87,6 +88,11 @@ Nu ska det vara möjligt att merga in din feature branch
 ---
 
 ## Lägg till en staging deploy
+
+Hämta och spara undan din Firebase deploy key: `firebase login:ci`
+
+Fixa några GitLab settings
+  -> CI / CD -> Environment variables -> FIREBASE_STAGING_API_KEY + nyckeln du sparade undan tidigare
 
 Vi lägger till ett nytt steg i `.gitlab-ci.yml`
 
