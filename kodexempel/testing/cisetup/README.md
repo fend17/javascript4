@@ -17,10 +17,6 @@ https://gitlab.com/users/sign_in
 
 Skapa ett nytt projekt
 
-Fixa några GitLab settings
- -> General -> Merge request -> Only allow merge requests to be merged if the pipeline succeeds
- -> CI / CD -> Environment variables -> FIREBASE_STAGING_API_KEY + nyckeln du sparade undan tidigare
-
 ---
 
 ## Klona ditt projekt från ditt GitLab repository
