@@ -230,6 +230,7 @@ Skriv om login.spec.js:
 ```
 before(function() {
   cy.clearLocalStorage();
+  indexedDB.deleteDatabase('firebaseLocalStorageDb');
 });
 
 describe('Login Test', function() {
