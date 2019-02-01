@@ -1,0 +1,26 @@
+image: node:10.15.0
+
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - test
+  - staging
+
+test:
+  stage: test
+  before_script: 
+    - yarn install 
+  script:
+    - yarn test
+
+staging: 
+  stage: staging
+  type: deploy
+  script:
+    - yarn global add firebase-tools
+    - yarn build
+    - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_STAGING_API_KEY
+  only:
+    - master
