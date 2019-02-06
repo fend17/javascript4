@@ -14,7 +14,7 @@ class Comments extends Component {
   }
 
   setCommentsFromLocalStorage = (postId = this.props.postId) => {
-    const fetchedComments = api.fetchAllCommments();
+    const fetchedComments = api.fetchAllComments();
     const comments = api.filterComments(fetchedComments, postId);
     this.setState({ comments });
   };

@@ -52,7 +52,7 @@ export function removePost(postId) {
 /**
  * @returns {array} array of comments from database
  */
-export function fetchAllCommments() {
+export function fetchAllComments() {
   const comments = localStorage.getItem('comments');
   return comments ? JSON.parse(comments) : [];
 }
@@ -82,7 +82,7 @@ export function filterComments(comments, id){
 }
 
 export function removeComment(commentId) {
-  const comments = fetchAllPosts();
+  const comments = fetchAllComments();
   const filteredComments = comments.filter(comment => comment.id !== commentId);
   storeCommentObject(filteredComments);
 }

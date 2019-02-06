@@ -11,7 +11,7 @@ class CreateNewComment extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    const fetchedComments = api.fetchAllCommments();
+    const fetchedComments = api.fetchAllComments();
     const newComment = api.createCommentObject(
       this.state.comment,
       this.props.postId,
