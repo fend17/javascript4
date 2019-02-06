@@ -24,10 +24,11 @@ class Comments extends Component {
     this.setCommentsFromLocalStorage();
   };
 
-  renderCommentList = comments =>
+  renderCommentList = (comments, currentPersona) =>
     comments.map(comment => (
       <SingleComment
         {...comment}
+        currentPersona={currentPersona}
         key={comment.id}
         onClick={this.removeComment}
       />
@@ -37,7 +38,7 @@ class Comments extends Component {
     return (
       <div className="py-2">
         <h2 className="text-indigo-darker border-b mb-4">Comments</h2>
-        {this.renderCommentList(this.state.comments)}
+        {this.renderCommentList(this.state.comments, this.props.currentPersona)}
         <CreateNewComment
           postId={this.props.postId}
           author={this.props.currentPersona}
